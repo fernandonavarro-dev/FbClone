@@ -32,3 +32,53 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Tailwind CSS install
+
+...:
+
+- [...](https://) - ...
+- [npx create-next-app my-project](https://tailwindcss.com/docs/guides/nextjs) - ...
+- [cd my-project](https://tailwindcss.com/docs/guides/nextjs) - ...
+- [npm install -D tailwindcss postcss autoprefixer](https://tailwindcss.com/docs/guides/nextjs) - ...
+- [npx tailwindcss init -p](https://tailwindcss.com/docs/guides/nextjs) - ...
+- [tailwind.config.js](https://tailwindcss.com/docs/guides/nextjs) - module.exports = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+- [global.css](https://tailwindcss.com/docs/guides/nextjs) - @tailwind base; @tailwind components; @tailwind utilities;
+- [npm run dev](https://tailwindcss.com/docs/guides/nextjs) - ...
+- [Header.js](https://) - import {
+    BellIcon,
+    ChatIcon,
+    ChevronDownIcon,
+    HomeIcon,
+    UserGroupIcon,
+    ViewGridIcon,
+} from "heroicons/react/solid";
+import {
+    FlagIcon,
+    PlayIcon,
+    SearchIcon,
+    ShoppingCartIcon,
+} from "@heroicons/react/outline";
+- [Header.js](https://) - ...
+
+## Headr
+
+...:
+
+- [...](https://) - ...
+- [npm install @heroicons/react](https://www.youtube.com/watch?v=dBotWYKYYWc) - Tailwind icons baby!
+
+## ...
+
+...:
+
+- [...](https://) - ...
+## Bookmark
+
+...:
+
+- [...](https://) - ...
