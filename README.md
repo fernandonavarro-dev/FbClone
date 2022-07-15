@@ -49,6 +49,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
   ],
 - [global.css](https://tailwindcss.com/docs/guides/nextjs) - @tailwind base; @tailwind components; @tailwind utilities;
 - [npm run dev](https://tailwindcss.com/docs/guides/nextjs) - ...
+- [npm install @heroicons/react](https://www.youtube.com/watch?v=dBotWYKYYWc) - Tailwind icons baby!
 - [Header.js](https://) - import {
     BellIcon,
     ChatIcon,
@@ -63,14 +64,13 @@ import {
     SearchIcon,
     ShoppingCartIcon,
 } from "@heroicons/react/outline";
-- [Header.js](https://) - ...
+- [...](https://) - ...
 
-## Headr
+## Header
 
 ...:
 
 - [...](https://) - ...
-- [npm install @heroicons/react](https://www.youtube.com/watch?v=dBotWYKYYWc) - Tailwind icons baby!
 
 ## ...
 
