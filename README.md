@@ -84,6 +84,27 @@ import {
 - [icon-header-center](https://) - className={`h-5 text-gray-500 text-center sm:h-7 mx-auto group-hover:text-blue-500 ${active && "text-blue-500"}`}
 - [...](https://) - ...
 
+## NextAuth
+
+...:
+
+- [...](https://next-auth.js.org/) - ...
+- [api/auth/[...nextauth].js](https://next-auth.js.org/getting-started/example) - import NextAuth from "next-auth"
+import GithubProvider from "next-auth/providers/github"
+
+export default NextAuth({
+  // Configure one or more authentication providers
+  providers: [
+    GithubProvider({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
+    }),
+    // ...add more providers here
+  ],
+})
+- [npm install next-auth](https://) - ...
+- [...](https://) - ...
+- [...](https://) - ...
 ## ...
 
 ...:
