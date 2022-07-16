@@ -50,6 +50,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - [global.css](https://tailwindcss.com/docs/guides/nextjs) - @tailwind base; @tailwind components; @tailwind utilities;
 - [npm run dev](https://tailwindcss.com/docs/guides/nextjs) - ...
 - [npm install @heroicons/react](https://www.youtube.com/watch?v=dBotWYKYYWc) - Tailwind icons baby!
+- [...](https://) - ...
+
+## Header
+
+...:
+
+CSS-related:
+
 - [Header.js](https://) - import {
     BellIcon,
     ChatIcon,
@@ -64,12 +72,16 @@ import {
     SearchIcon,
     ShoppingCartIcon,
 } from "@heroicons/react/outline";
-- [...](https://) - ...
-
-## Header
-
-...:
-
+- [header-full](https://) - className="flex sticky top-0 bg-white items-center p-2 lg:px-5 shadow-md"
+- [header-left](https://) - className="flex items-center"
+- [header-searchbar](https://) - className="flex ml-2 items-center rounded-full bg-gray-100 p-2"
+- [header-center](https://) - className="flex justify-center flex-grow"
+- [header-center-icons](https://) - className="flex space-x-6 md:space-x-2"
+- [header-right](https://) - className="flex items-center sm:space-x-2 justify-end"
+- [header-user-icons](https://) - className="flex space-x-6 md:space-x-2"
+- [HeaderIcon.js](https://) - ...
+- [header-center-icon](https://) - className="flex items-center cursor-pointer md:px-10 sm:h-14 md:hover:bg-gray-100 rounded-xl active:border-b-2 active:border-blue-500 hover:text-blue-500"
+- [icon-header-center](https://) - className={`h-5 text-gray-500 text-center sm:h-7 mx-auto group-hover:text-blue-500 ${active && "text-blue-500"}`}
 - [...](https://) - ...
 
 ## ...
