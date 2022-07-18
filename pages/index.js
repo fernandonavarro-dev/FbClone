@@ -3,6 +3,7 @@ import Header from "../components/Header"
 import Sidebar from "../components/Sidebar"
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Feed from '../components/Feed'
 
 export default function Home() {
   return (
@@ -20,7 +21,8 @@ export default function Home() {
 
       <main className="flex">
         <Sidebar />
-        {/* Feed */}
+        <Feed />
+        {/* <Feed /> */}
         {/* Widgets */}
       </main>
     </div>
