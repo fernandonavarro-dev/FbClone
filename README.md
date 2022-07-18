@@ -105,6 +105,27 @@ export default NextAuth({
 - [npm install next-auth](https://) - ...
 - [...](https://) - ...
 - [...](https://) - ...
+## Sidebar
+
+CSS related:
+
+- [...](https://www.youtube.com/watch?v=dBotWYKYYWc&t=5467s) - ...
+- [components/Sidebar.js](https://) - import {
+    ChevronDownIcon,
+    ShoppingBagIcon,
+    UserGroupIcon,
+} from "@heroicons/react/outline"
+import {
+    CalendarIcon,
+    ClockIcon,
+    DesktopComputerIcon,
+    UsersIcon,
+} from "@heroicons/react/solid"
+- [sidebar-full](https://) - className="p-2 mt-5 max-w-[600px] xl:min-w-[300px]"
+- [sidebar-row-div](https://) - className="flex items-center space-x-2 p-4 hover:bg-gray-200 rounded-xl cursor-pointer"
+- [sidebar-row-icon](https://) - className="h-8 w-8 text-blue-500"
+- [sidebar-row-title](https://) - className="hidden sm:inline-flex font-medium"
+- [...](https://) - ...
 ## ...
 
 ...:
