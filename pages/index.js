@@ -19,10 +19,9 @@ export default function Home() {
 
       {/* Header */}
 
-      <main className="flex">
+      <main className="flex bg-gray-100">
         <Sidebar />
         <Feed />
-        {/* <Feed /> */}
         {/* Widgets */}
       </main>
     </div>

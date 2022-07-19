@@ -18,6 +18,7 @@ export default function Sidebar() {
   return (
     <div id="sidebar-full" className="p-2 mt-5 max-w-[600px] xl:min-w-[300px]">
         {/* <SidebarRow src={session.user.image} title={session.user.name} /> */}
+        <SidebarRow src="https://links.papareact.com/l4v" title="UserName" />
         <SidebarRow Icon={UsersIcon} title="Friends" />
         <SidebarRow Icon={UserGroupIcon} title="Groups" />
         <SidebarRow Icon={ShoppingBagIcon} title="MarketPlace" />

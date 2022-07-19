@@ -41,8 +41,8 @@ function Header() {
             </div>     
         </div>
         <div id="header-right" className="flex items-center sm:space-x-2 justify-end" >
-            <div id="header-user-icons" className="flex space-x-6 md:space-x-2" >
-                <p className="whitespace-nowrap font-semibold pr-3 items-center">Fernando Navarro</p>
+            <div id="header-user-icons" className="flex space-x-6 items-center md:space-x-2" >
+                <p className="whitespace-nowrap font-semibold pr-3 items-center">UserName</p>
                 <ViewGridIcon className="icon" />
                 <ChatIcon className="icon" />
                 <BellIcon className="icon" />
