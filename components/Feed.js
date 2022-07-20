@@ -2,13 +2,13 @@ import InputBox from "./InputBox"
 import Posts from "./Posts"
 import Stories from "./Stories"
 
-export default function Feed() {
+export default function Feed({posts}) {
   return (
     <div id="feed-full" className="flex-grow h-screen pb-44 pt-6 mr-4 xl:mr-40 overflow-y-auto scrollbar invisible-scrollbar">
         <div id="feed-stories" className="mx-auto max-w-md md:max-w-lg lg:max-w-2xl">
             <Stories />
             <InputBox />
-            <Posts />
+            <Posts posts={posts} />
         </div>
     </div>
   )
