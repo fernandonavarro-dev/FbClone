@@ -110,7 +110,7 @@ export default NextAuth({
 
 CSS related:
 
-- [...](https://www.youtube.com/watch?v=dBotWYKYYWc&t=5467s) - ...
+- [video](https://www.youtube.com/watch?v=dBotWYKYYWc&t=5467s) - ...
 - [components/Sidebar.js](https://) - import {
     ChevronDownIcon,
     ShoppingBagIcon,
@@ -132,7 +132,7 @@ import {
 
 ...:
 
-- [...](https://www.youtube.com/watch?v=dBotWYKYYWc&t=6487s) - ...
+- [video](https://www.youtube.com/watch?v=dBotWYKYYWc&t=6487s) - ...
 - [components/Feed.js](https://) - ...
 - [feed-full](https://) - className="flex-grow h-screen pb-44 pt-6 mr-4 xl:mr-40 overflow-y-auto"
 - [feed-stories](https://) - className="mx-auto max-w-md md:max-w-lg lg:max-w-2xl"
@@ -143,7 +143,7 @@ import {
 
 ...:
 
-- [...](https://www.youtube.com/watch?v=dBotWYKYYWc&t=6553s) - ...
+- [video](https://www.youtube.com/watch?v=dBotWYKYYWc&t=6553s) - ...
 - [components/Stories.js](https://) - ...
 - [stories-full](https://) - className="flex justify-center space-x-3 mx-auto"
 - [components/StoryCard.js](https://) - ...
@@ -156,23 +156,112 @@ import {
 
 ...:
 
-- [...](https://www.youtube.com/watch?v=dBotWYKYYWc&t=8132s) - ...
-- [...](https://) - ...
+- [video](https://www.youtube.com/watch?v=dBotWYKYYWc&t=8132s) - ...
+- [components/InputBox.js](https://) - ...
+- [inputbox-full](https://) - className="bg-white p-2 rounded-2xl shadow-md text-gray-500 front-medium mt-6"
+- [inputbox-top-half](https://) - className="flex space-x-4 p-4 items-center"
+- [inputbox-profile-image](https://) - className="rounded-full"
+- [inputbox-form](https://) - className="rounded-full h-12 bg-gray-100 flex-grow px-5 focus:outline-none"
+- [inputbox-bottom-half](https://) - className="flex justify-evenly p-3 border-t"
+- [firebase.js](https://) - firebaseConfig 
 - [...](https://) - ...
 
 ## Cloud Firestore
 
 ...:
 
-- [...](https://www.youtube.com/watch?v=dBotWYKYYWc&t=9086s) - ...
-- [...](https://) - Create app -> create Firestore Db
+- [video](https://www.youtube.com/watch?v=dBotWYKYYWc&t=9086s) - ...
+- [$ npm i firebase@8.6.1](https://) - ...
+- [Firebase-Cloud Firestore-Project Settings](https://) - Create app -> create Firestore Db
 - [...](https://) - ...
 
 ## InputBox 2
 
 ...:
 
-- [...](https://www.youtube.com/watch?v=dBotWYKYYWc&t=9327s) - ...
+- [video](https://www.youtube.com/watch?v=dBotWYKYYWc&t=9327s) - ...
+- [components/InputBox.js](https://) - Click & add image functionality
+import { useRef, useState } from "react"
+...
+const filepickerRef = useRef(null)
+const [imageToPost, setImageToPost] = useState(null)
+...
+const sendPost = (e) => {
+        e.preventDefault()
+
+        if (!inputRef.current.value) return
+
+        db.collection("posts").add({
+            message: inputRef.current.value,
+            name: "session.user.name",
+            email: "session.user.email",
+            image: "session.user.image",
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
+        .then((doc) => {                    // we receive doc as response for .add to collection("posts")
+            if (imageToPost) {              // if the user selected an image to post
+                const uploadTask = storage  // upload task that uses storage from firebase
+                    .ref(`posts/${doc.id}`)     // accessing the storage bucket -> posts collection
+                    .putString(imageToPost, "data_url") // the image to post in a string format
+
+                    removeImage()
+
+                    uploadTask.on(          // when state changes we perform the image uploadTask
+                        "state_change",
+                        null,               // this is how we could track progress but not currently
+                        (error) => console.error(error), // if error log it
+                        () => {             // when the upload completes...
+                            storage.ref("posts").child(doc.id).getDownloadURL().then(url => {
+                                db.collection("posts").doc(doc.id).set({    // we set the post of doc.id in collection("posts") to ...
+                                    postImage: url
+                                }, {merge: true})       // VERY IMPORTANT TO MERGE, OTHERWISE THE OTHER INFORMATION IS OVERWRITTEN BY postImage
+                            })
+                        }
+                    )
+            }
+        })
+
+        inputRef.current.value=""
+    }
+
+    const addImageToPost = (e) => {
+        const reader = new FileReader()
+        if (e.target.files[0]) {
+            reader.readAsDataURL(e.target.files[0])
+        }
+
+        reader.onload = (readerEvent) => {
+            setImageToPost(readerEvent.target.result)
+        }
+    }
+
+    const removeImage = () => {
+        setImageToPost(null)
+    }
+...
+            {imageToPost && (
+                <div 
+                    onClick={removeImage} 
+                    className="flex flex-col filter hover:brightness-110 transition duration-150 transform hover:scale-105 cursor:pointer"
+                    >
+                        <img className="h-10 object-contain " src={imageToPost} alt="" />
+                        <p className="text-xs text-red-500 text-center cursor-pointer">Remove</p>
+                </div>
+            )}
+...
+<div onClick={() => filepickerRef.current.click()} className="inputIcon">
+                <CameraIcon className="h-7 text-green-400" />
+                <p className="text-xs sm:text-sm xl:text-base">Photo/Video</p>
+                <input
+                    ref={filepickerRef}
+                    onChange={addImageToPost}
+                    type="file"
+                    hidden
+                    />
+            </div>
+...
+
+- [firebase project/storage/rules](https://) - allow to read & write by deleting 'if false'
 - [...](https://) - ...
 - [...](https://) - ...
 
