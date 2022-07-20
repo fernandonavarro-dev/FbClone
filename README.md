@@ -270,8 +270,34 @@ const sendPost = (e) => {
 
 - [video](https://www.youtube.com/watch?v=dBotWYKYYWc) - ...
 - [$ npm install --save react-firebase-hooks](https://) - ...
-- [components/Posts.js](https://) - ...
+- [components/Posts.js](https://) - const [realtimePosts] = useCollection(
+        db.collection("posts").orderBy("timestamp", "desc")
+        )
+  
+    return (
+    <div>
+        {realtimePosts?.docs.map(post => (
+            <Post 
+                key={post.id}
+                name={post.data().name}
+                message={post.data().message}
+                email={post.data().email}
+                timestamp={post.data().timestamp}
+                image={post.data().image}
+                postImage={post.data().postImage}
+            />
+         ))} 
+    </div>
 - [components/Post.js](https://) - ...
+- [posts-full](https://) - className="flex flex-col"
+- [post-full](https://) - className="p-5 bg-white mt-5 rounded-t-2xl shadow-sm"
+- [post-top](https://) - className="flex items-center space-x-2"
+- [post-top-image](https://) - className="rounded-full"
+- [post-message](https://) - className="font-medium pt-4"
+- [post-image](https://) - className="relative h-56 md:h-96 bg-white"
+- [post-bottom](https://) - className="flex justify-between items-center rounded-b-2xl bg-white shadow-md text-gray-400 border-t"
+- ["post-bottom-icons"](https://) - className="inputIcon rounded-none"
+- ["post-bottom-text"](https://) - className="text-xs sm:text-base"
 - [...](https://) - ...
 
 ## Widgets
